@@ -9,6 +9,8 @@
 <body>
     <h1>TECHNICAL TEST GITS</h1>
     <?php
+
+    //jawaban soal 1
     echo "<h3>Soal 1</h3>";
     echo "Membuat aplikasi untuk menampilkan “Hello” dan “World”<br><br>";
     function filter($int){
@@ -27,12 +29,11 @@
     echo filter(5); //World
     echo filter(15); //Hello World
 
+
+    //jawaban soal 2
     echo "<h3>Soal 2</h3>";
     echo "Melakukan check format email<br><br>";
 
-
-    
-    
     function cek_mail($email){
         $pattern = '/^([a-zA-Z0-9\.]{1,20}+@+[a-zA-Z]+(\.)+(id|co.id))$/';
             if(preg_match($pattern, $email)){
@@ -44,10 +45,50 @@
     cek_mail("aryadewangga@gmail.co.id");
     cek_mail("123456789123456789101@gmail.co.id");
 
-    
+    //jawaban soal 3
     echo "<h3>Soal 3</h3>";
     echo "Konversi Waktu<br><br>";
         
+        function convertTime($time){
+            $h1 = $time[1]-'0';
+            $h2 = $time[0]-'0';
+            $hh = ($h2*10+$h1%10);
+
+            if($time[8]=='A'){
+                echo "$time : ";
+                if ($hh==12){
+                    echo "00";
+                    for ($s=2;$s<=7;$s++){
+                        echo "$time[$s]";
+                    }
+                } else{
+                    for($s=0;$s<=7;$s++){
+                        echo "$time[$s]";
+                    }
+                    
+                }echo "<br>";
+            }else{
+                echo "$time : ";
+                if ($hh==12){
+                    echo "12";
+                    for ($s=2;$s<=7;$s++){
+                        echo "$time[$s]";
+                    }
+                } else{
+                    $hh=$hh+12;
+                    echo "$hh";
+                    for($s=0;$s<=7;$s++){
+                        echo "$time[$s]";
+                    }
+                }
+                echo "<br>";
+            }
+        }
+
+        convertTime("12:00:00PM");
+        convertTime("12:00:00AM");
+
+    // jawaban soal 4
     echo "<h3>Soal 4</h3>";
     echo "Reverse Kalimat<br><br>";
     
@@ -69,6 +110,8 @@
     reverseString("I LOVE GITS");
     echo"";
 
+
+    //jawaban soal 5
     echo "<h3>Soal 5</h3>";
     echo "Cek Palindrom<br><br>";
 
